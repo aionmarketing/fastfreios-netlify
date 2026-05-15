@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ClipboardCheck, CheckCircle2, Loader2 } from "lucide-react";
-import { APPS_SCRIPT_URL, WHATSAPP_NUMBER } from "@/config";
+import { WHATSAPP_NUMBER } from "@/config";
 
 const SERVICES = [
   "Checkup Gratuito de Freios",
@@ -27,20 +27,6 @@ function buildWhatsAppMsg(name: string, phone: string, car: string, service: str
   );
 }
 
-async function sendToSheets(data: Record<string, string>) {
-  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.startsWith("COLOQUE")) return;
-  try {
-    await fetch(APPS_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors", // Apps Script requires no-cors
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, timestamp: new Date().toLocaleString("pt-BR") }),
-    });
-  } catch {
-    // Silently ignore — WhatsApp still opens even if Sheets fails
-  }
-}
-
 export const CheckupForm = () => {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -65,8 +51,6 @@ export const CheckupForm = () => {
       }).toString(),
     }).catch(() => {});
 
-    // 2. Send lead to Google Sheets (non-blocking)
-    await sendToSheets({ name, phone, car, service });
 
     setStatus("success");
 
