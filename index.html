@@ -53,5 +53,14 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  
+  <!-- Netlify Forms — build-time detection (hidden) -->
+  <form name="checkup" data-netlify="true" hidden>
+    <input type="text" name="name" />
+    <input type="tel" name="phone" />
+    <input type="text" name="car" />
+    <select name="service"></select>
+    <input type="text" name="timestamp" />
+  </form>
+</body>
 </html>

@@ -54,7 +54,18 @@ export const CheckupForm = () => {
 
     setStatus("sending");
 
-    // 1. Send lead to Google Sheets (non-blocking)
+    // 1. Send to Netlify Forms
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        "form-name": "checkup",
+        name, phone, car, service,
+        timestamp: new Date().toLocaleString("pt-BR"),
+      }).toString(),
+    }).catch(() => {});
+
+    // 2. Send lead to Google Sheets (non-blocking)
     await sendToSheets({ name, phone, car, service });
 
     setStatus("success");
@@ -109,7 +120,8 @@ export const CheckupForm = () => {
             e salvamos seu contato para não te perder.
           </p>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form name="checkup" data-netlify="true" className="space-y-4" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="checkup" />
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label
