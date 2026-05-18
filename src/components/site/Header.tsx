@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 
@@ -20,6 +21,11 @@ export const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   return (
     <header
@@ -45,7 +51,7 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="https://wa.me/5519999338747"
             target="_blank"
@@ -64,15 +70,15 @@ export const Header = () => {
 
         <button
           aria-label="Abrir menu"
-          className="lg:hidden md:hidden text-foreground"
+          className="lg:hidden text-foreground"
           onClick={() => setOpen(true)}
         >
           <Menu className="h-7 w-7" />
         </button>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 bg-background/98 backdrop-blur-xl flex flex-col">
+      {open && createPortal(
+        <div className="fixed inset-0 z-[9999] bg-background flex flex-col">
           <div className="container flex items-center justify-between py-5">
             <Logo />
             <button aria-label="Fechar menu" onClick={() => setOpen(false)}>
@@ -98,7 +104,8 @@ export const Header = () => {
               Checkup Gratuito
             </a>
           </nav>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );

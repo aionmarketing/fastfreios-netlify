@@ -6,15 +6,15 @@ export const CtaBanner = () => (
     <div className="container relative">
       <div className="grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-8">
-          <div className="text-xs font-bold uppercase tracking-[0.3em] mb-3 opacity-80">
+          <div className="text-sm font-bold uppercase tracking-[0.3em] mb-5 opacity-80">
             // Pronto pra rodar tranquilo?
           </div>
-          <h2 className="font-display text-6xl md:text-8xl uppercase leading-[0.85]">
+          <h2 className="font-display text-5xl md:text-8xl uppercase leading-[1.1]">
             Seu freio<br />
             tá seguro?
           </h2>
         </div>
-        <div className="lg:col-span-4 flex flex-col gap-4">
+        <div className="lg:col-span-4 flex flex-col gap-7 pt-4 lg:pt-0">
           <a
             href="#checkup"
             className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-background text-foreground font-bold uppercase text-sm tracking-widest hover:bg-foreground hover:text-background transition shadow-deep"

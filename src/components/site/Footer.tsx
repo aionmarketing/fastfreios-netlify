@@ -50,7 +50,7 @@ export const Footer = () => (
           </div>
         </div>
 
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-4">
           <h4 className="font-display text-xl uppercase mb-5 text-foreground">Contato</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
@@ -72,17 +72,7 @@ export const Footer = () => (
           </ul>
         </div>
 
-        <div className="lg:col-span-2">
-          <h4 className="font-display text-xl uppercase mb-5 text-foreground">Menu</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="#servicos" className="hover:text-primary transition">Serviços</a></li>
-            <li><a href="#sobre" className="hover:text-primary transition">Sobre</a></li>
-            <li><a href="#dicas" className="hover:text-primary transition">Dicas</a></li>
-            <li><a href="#faq" className="hover:text-primary transition">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-3">
           <h4 className="font-display text-xl uppercase mb-5 text-foreground">Horário</h4>
           <div className="space-y-3 text-sm">
             <div className="flex items-center gap-3">
@@ -91,7 +81,6 @@ export const Footer = () => (
               </span>
               <span className="text-foreground font-medium">07:30 – 18:00</span>
             </div>
-            <p className="text-xs text-muted-foreground pl-[76px]">Intervalo: 12h – 13h</p>
             
             <div className="flex items-center gap-3 pt-2 border-t border-border/50">
               <span className="inline-flex items-center justify-center w-16 h-7 bg-muted/30 border border-border text-muted-foreground text-xs font-bold rounded">
