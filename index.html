@@ -48,19 +48,177 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Google Analytics 4 — substituir G-XXXXXXXXXX pelo Measurement ID real -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+
+    <!-- Schema.org JSON-LD — estático para indexação correta pelo Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://fastfreios.com.br/#org",
+          "name": "Fast Freios",
+          "url": "https://fastfreios.com.br/",
+          "logo": "https://fastfreios.com.br/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/fastfreios/",
+            "https://www.facebook.com/fastfreiospiracicaba"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-19-99933-8747",
+            "contactType": "customer service",
+            "availableLanguage": "Portuguese",
+            "areaServed": "Piracicaba"
+          }
+        },
+        {
+          "@type": "AutoRepair",
+          "@id": "https://fastfreios.com.br/#business",
+          "name": "Fast Freios",
+          "alternateName": "Fast Freios Piracicaba",
+          "slogan": "Segurança em qualquer parada",
+          "description": "Especialistas em freios e suspensão automotiva em Piracicaba SP. Troca de pastilhas, discos, fluido de freio, revisão completa, suspensão, alinhamento e diagnóstico de freio ABS. Diagnóstico grátis em 20 minutos com laudo técnico. Loja autorizada Fremax, Frasle e Nakata.",
+          "url": "https://fastfreios.com.br/",
+          "telephone": "+55-19-3490-0304",
+          "email": "contato@fastfreios.com.br",
+          "image": "https://fastfreios.com.br/logo.png",
+          "logo": "https://fastfreios.com.br/logo.png",
+          "priceRange": "$$",
+          "currenciesAccepted": "BRL",
+          "paymentAccepted": "Cash, Credit Card, Debit Card, PIX",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Dr. Cássio Pascoal Padovani, 1021",
+            "addressLocality": "Piracicaba",
+            "addressRegion": "SP",
+            "postalCode": "13420-355",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-22.7253",
+            "longitude": "-47.6477"
+          },
+          "hasMap": "https://maps.google.com/?q=Fast+Freios+Piracicaba",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "07:30",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/fastfreios/",
+            "https://www.facebook.com/fastfreiospiracicaba"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-19-99933-8747",
+            "contactType": "customer service",
+            "availableLanguage": "Portuguese",
+            "contactOption": "TollFree"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Piracicaba" },
+            { "@type": "State", "name": "São Paulo" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços Fast Freios",
+            "url": "https://fastfreios.com.br/#servicos",
+            "offers": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de pastilhas de freio" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de discos de freio" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sangria de fluido de freio" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico de freio ABS" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revisão completa de freios" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensão completa" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alinhamento e balanceamento" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Calibração de nitrogênio nos pneus" } }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://fastfreios.com.br/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O diagnóstico é realmente grátis?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Sim. Fazemos avaliação completa do sistema de freio sem custo. Você recebe um laudo técnico com tudo o que precisa ser feito." }
+            },
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva o diagnóstico?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Em média 20 minutos. Verificamos pastilhas, discos, fluido, mangueiras e sistema ABS." }
+            },
+            {
+              "@type": "Question",
+              "name": "Trabalhamos com garantia?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todas as peças têm garantia do fabricante e oferecemos garantia da mão de obra." }
+            },
+            {
+              "@type": "Question",
+              "name": "Preciso agendar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Não é obrigatório, mas recomendamos. Assim garantimos que o seu carro seja atendido no horário ideal para você." }
+            },
+            {
+              "@type": "Question",
+              "name": "Vocês atendem só freios ou suspensão também?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Freios, suspensão, alinhamento, balanceamento e calibração de nitrogênio. Cuidamos de tudo que faz o seu carro parar e andar com segurança." }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://fastfreios.com.br/#website",
+          "url": "https://fastfreios.com.br/",
+          "name": "Fast Freios Piracicaba",
+          "description": "Especialistas em freios e suspensão automotiva em Piracicaba SP",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://fastfreios.com.br/#org" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://fastfreios.com.br/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://fastfreios.com.br/" }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  
-  <!-- Netlify Forms — build-time detection (hidden) -->
-  <form name="checkup" data-netlify="true" hidden>
-    <input type="text" name="name" />
-    <input type="tel" name="phone" />
-    <input type="text" name="car" />
-    <select name="service"></select>
-    <input type="text" name="timestamp" />
-  </form>
-</body>
+
+    <!-- Netlify Forms — build-time detection (hidden) -->
+    <form name="checkup" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="text" name="car" />
+      <select name="service"></select>
+      <input type="text" name="timestamp" />
+    </form>
+  </body>
 </html>
